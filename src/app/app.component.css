@@ -1,0 +1,11 @@
+.container{
+  text-align:center;
+  width:30%;
+  height: 400px;
+  margin: 0 auto;
+}
+.container .img-main{
+  width:55px;
+}
+
+

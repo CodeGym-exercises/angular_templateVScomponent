@@ -1,0 +1,17 @@
+<h1>Rating Bar</h1>
+
+<ul>
+  <li *ngFor="let box of cboxs">
+    <div class="box" (mouseover)="mouseActive(box.boxValue)" (mouseout)="mouseReset(box.boxValue)"
+      [ngClass] = "box.isActive ? 'bgActive' : 'bgDefault'"  >
+      {{box.boxValue}}
+    </div>
+  </li>
+</ul>
+
+<h1> [ {{current_box_value}} ] </h1>
+
+
+
+
+

@@ -1,0 +1,12 @@
+<h1>To Do App</h1>
+
+<input type="text" [(ngModel)]="inputValue" (change)=onEnterInput();>
+<p>&lt; {{inputValue}}&gt;<br />&nbsp; - - - - - - -<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; \&nbsp; ^__^<br />
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    \ (oo)\_______<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(__)\&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;)\/\
+    <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|| - - - -w |
+    <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;||&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ||</p>
+<ul *ngIf="isWorksEmpty" class="list-group">
+    <li *ngFor="let work of works" class="list-group-item" [ngClass]="work.isDone ? 'done' : 'default'" (click)="work.isDone = !work.isDone" >{{work.content}}</li>
+</ul>

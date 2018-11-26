@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {CountdownComponent} from './countdown/countdown.component';
+import {HomeComponent} from './home/home.component';
+import {RatingbarComponent} from './ratingbar/ratingbar.component';
+import { TodoComponent } from './todo/todo.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: 'countdown-app', component: CountdownComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'rating', component: RatingbarComponent},
+  {path: 'todo', component: TodoComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

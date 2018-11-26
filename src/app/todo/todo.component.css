@@ -1,0 +1,15 @@
+ul{
+    text-align: left;
+    width: 60%;
+    margin: 30px auto;
+}
+li{
+    cursor: pointer;
+}
+
+.done{ 
+    text-decoration: line-through;
+}
+.default{
+    text-decoration: none;
+}

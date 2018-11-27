@@ -11,6 +11,7 @@ import { NamecardComponent } from './namecard/namecard.component';
 import { TodoComponent } from './todo/todo.component';
 
 import {FormsModule} from '@angular/forms';
+import { RegisterFinalComponent } from './register-final/register-final.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import {FormsModule} from '@angular/forms';
     RatingbarComponent,
     ProgressbarComponent,
     NamecardComponent,
-    TodoComponent
+    TodoComponent,
+    RegisterFinalComponent
   ],
   imports: [
     BrowserModule,

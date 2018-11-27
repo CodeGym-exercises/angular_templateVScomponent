@@ -1,0 +1,22 @@
+.form-group{
+    text-align: left;
+}
+
+form{
+    width: 84%;
+    margin: 50px auto;
+}
+
+select, option {
+    cursor: pointer;
+}
+
+.cow{
+    display: block;
+    position: fixed;
+    top: 47%;
+    left: 63%;
+}
+pre {
+    text-align: left;
+}

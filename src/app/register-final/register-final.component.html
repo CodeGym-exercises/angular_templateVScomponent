@@ -1,0 +1,104 @@
+<h1>User registration</h1>
+<form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)" novalidate>
+
+<div class="form-group">
+    <label for="email">Email</label>
+    <input [(ngModel)]="profile.email" #email="ngModel" required minlength="5" type="email" name="email" id="email" class="form-control">
+</div>
+<div class="alert alert-danger" *ngIf="!email.valid&&email.touched">
+    <p *ngIf="email?.errors?.required">Email is required</p>
+    <p *ngIf="email?.errors?.minlength">The input value must be of minimum length 5 character</p>
+</div>
+
+
+<div class="form-group">
+    <label for="password">Password</label>
+    <input [(ngModel)]="profile.password" #password="ngModel" required minlength="5" maxlength="15" type="password" name="password" id="password" class="form-control">
+</div>
+<div class="alert alert-danger" *ngIf="!password.valid&&password.touched">
+    <p *ngIf="password?.errors?.required">Password is required</p>
+    <p *ngIf="password?.errors?.minlength">The input value must be of minimum length 5 character</p>
+    <p *ngIf="password?.errors?.maxlength">The input value must be of minimum length 15 character</p>
+</div>
+
+
+<div class="form-group">
+    <label for="confirmPass">Confirm Password</label>
+    <input [(ngModel)]="profile.confirmPass" #confirmPass="ngModel" required minlength="5" maxlength="15"  type="password" name="confirmPass" id="confirmPass" class="form-control">
+</div>
+<div *ngIf="(!confirmPass.valid||confirmPass.value!==password.value)&&confirmPass.touched">
+<div class="alert alert-danger">
+    <p *ngIf="confirmPass.value!==password.value">Some thing wrong!! Confirm Password must be like Password</p>    
+    <p *ngIf="confirmPass?.errors?.required">Password is required</p>
+    <p *ngIf="confirmPass?.errors?.minlength">The input value must be of minimum length 5 character</p>
+    <p *ngIf="confirmPass?.errors?.maxlength">The input value must be of minimum length 15 character</p>
+</div>
+</div>
+
+
+<div class="form-group">
+    <label for="country">Country</label>
+    <select class="form-control" id="country" [(ngModel)]="profile.country" name="country">
+        <option>Ha noi</option>
+        <option>Sai Gon</option>
+        <option>Da Nang</option>
+        <option>Hai Phong</option>
+        <option>Binh Duong</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="age">Age</label>
+    <select class="form-control" id="age" [(ngModel)]="profile.age" name="age">
+        <option>1995</option>
+        <option>1996</option>
+        <option>1997</option>
+        <option>1998</option>
+        <option>1999</option>
+    </select>
+</div>
+<div class="form-group">
+    <label>Gender</label><br>
+    <label class="radio-inline">
+        <input type="radio" [(ngModel)]="profile.gender" #gender="ngModel" name="inlineRadioOptions" id="inlineRadio1" value="male" name="gender"> Male
+    </label>
+    <label class="radio-inline">
+        <input type="radio" [(ngModel)]="profile.gender" #gender="ngModel" name="inlineRadioOptions" id="inlineRadio2" value="female" name="gender"> Female
+    </label>
+</div>
+<div class="form-group">
+    <label for="phone">Phone</label>
+    <input [(ngModel)]="profile.phone" name="phone" #phone="ngModel" type="text" class="form-control" id="phone">
+</div>
+
+<div class="form-group"><input type="submit" class="btn btn-primary" value="Submit"></div>
+</form>
+
+
+<pre>
+    {{profileForm.value | json}}
+</pre>
+
+<pre>
+    {{profile | json}}
+</pre>
+
+
+
+<div class="cow" *ngIf="(email?.errors && email.touched||password?.errors && password.touched||confirmPass?.errors && confirmPass.touched)">
+        <p>&lt;<span *ngIf="email?.errors?.required && email.touched">Email required</span>
+            <span *ngIf="email?.errors?.minlength && email.touched">The email input value must be of minimum length 5 character</span>
+            <span *ngIf="password?.errors?.required && password.touched">Password required</span>
+            <span *ngIf="password?.errors?.minlength && password.touched">The password input value must be of minimum length 5 character</span>
+            <span *ngIf="password?.errors?.maxlength && password.touched">The password input value must be of maximum, length 15 character</span>
+            <span *ngIf="confirmPass.value!==password.value && confirmPass.touched">Some thing wrong!! Confirm Password must be like Password</span>
+            <span *ngIf="confirmPass?.errors?.required && confirmPass.touched">Confirm password required</span>
+            <span *ngIf="confirmPass?.errors?.minlength && confirmPass.touched ">The Confirm password input value must be of minimum length 5 character</span>
+            <span *ngIf="confirmPass?.errors?.maxlength && confirmPass.touched">The Confirm password input value must be of maximum, length 15 character</span>
+            &gt;<br />&nbsp; - - - - - - -<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; \&nbsp; ^__^<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            \ (oo)\_______<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(__)\&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;)\/\
+            <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|| - - - -w |
+            <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;||&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ||
+        </p>
+</div>

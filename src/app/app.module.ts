@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,8 +11,9 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
 import { NamecardComponent } from './namecard/namecard.component';
 import { TodoComponent } from './todo/todo.component';
 
-import {FormsModule} from '@angular/forms';
+
 import { RegisterFinalComponent } from './register-final/register-final.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +23,14 @@ import { RegisterFinalComponent } from './register-final/register-final.componen
     ProgressbarComponent,
     NamecardComponent,
     TodoComponent,
-    RegisterFinalComponent
+    RegisterFinalComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

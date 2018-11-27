@@ -1,0 +1,51 @@
+<h1>Login</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" class="form-control" id="email" placeholder="email">
+  </div>
+  <div class="alert alert-danger" role='alert' *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
+    Invalid email!!
+  </div>
+  <fieldset formGroupName="pwGroup">
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" class="form-control" id="password" placeholder="password">
+      </div>
+      <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" formControlName="confirmPassword" class="form-control" id="confirmPassword" placeholder="confirm password">
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="loginForm.hasError('passwordnotmatch',[pwGroup]) && loginForm.get('pwGroup').touched">
+          Password doesn't match
+      </div>
+  </fieldset>
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary">
+  </div>
+</form>
+
+<pre>
+  {{loginForm.value | json}}
+</pre>
+
+
+<!-- <div class="cow" *ngIf="(email?.errors && email.touched||password?.errors && password.touched||confirmPass?.errors && confirmPass.touched)">
+    <p>&lt;<span *ngIf="email?.errors?.required && email.touched">Email required</span>
+        <span *ngIf="email?.errors?.minlength && email.touched">The email input value must be of minimum length 5 character</span>
+        <span *ngIf="password?.errors?.required && password.touched">Password required</span>
+        <span *ngIf="password?.errors?.minlength && password.touched">The password input value must be of minimum length 5 character</span>
+        <span *ngIf="password?.errors?.maxlength && password.touched">The password input value must be of maximum, length 15 character</span>
+        <span *ngIf="confirmPass.value!==password.value && confirmPass.touched">Some thing wrong!! Confirm Password must be like Password</span>
+        <span *ngIf="confirmPass?.errors?.required && confirmPass.touched">Confirm password required</span>
+        <span *ngIf="confirmPass?.errors?.minlength && confirmPass.touched ">The Confirm password input value must be of minimum length 5 character</span>
+        <span *ngIf="confirmPass?.errors?.maxlength && confirmPass.touched">The Confirm password input value must be of maximum, length 15 character</span>
+        &gt;<br />&nbsp; - - - - - - -<br />
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; \&nbsp; ^__^<br />
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        \ (oo)\_______<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(__)\&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;)\/\
+        <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|| - - - -w |
+        <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;||&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ||
+    </p>
+</div> -->

@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { MusicService} from '../mymusic.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-mymusic',
   templateUrl: './mymusic.component.html',
   styleUrls: ['./mymusic.component.css']
 })
 export class MymusicComponent implements OnInit {
-  url ='https://www.youtube.com/embed/WpYeekQkAdc';
-  constructor(private mymusicService: MusicService) { }
+  url:SafeResourceUrl;
+  constructor(private mymusicService: MusicService,
+    private domSanitizer: DomSanitizer ) { }
   song = new Song();
-  domSanitizer: DomSanitizer;
+  
   ngOnInit() {
   }
 
@@ -26,8 +27,8 @@ export class MymusicComponent implements OnInit {
   }
   
   setUrl() {
-    const url = 'https://www.youtube.com/embed/' + this.song.id;
-    this.url = url;
+    const _url = 'https://www.youtube.com/embed/' + this.song.id;
+    this.url = this.domSanitizer.bypassSecurityTrustResourceUrl(_url);
   }
 }
 

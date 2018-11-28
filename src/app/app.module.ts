@@ -28,7 +28,7 @@ import { MymusicComponent } from './mymusic/mymusic.component';
     RegisterFinalComponent,
     LoginComponent,
     TimelinesComponent,
-    MymusicComponent
+    MymusicComponent,
   ],
   imports: [
     BrowserModule,

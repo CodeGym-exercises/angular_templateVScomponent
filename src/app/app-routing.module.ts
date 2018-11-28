@@ -7,6 +7,7 @@ import { TodoComponent } from './todo/todo.component';
 import { RegisterFinalComponent } from './register-final/register-final.component';
 import { LoginComponent } from './login/login.component';
 import { TimelinesComponent } from './timelines/timelines.component';
+import { MymusicComponent } from './mymusic/mymusic.component';
 
 const routes: Routes = [
   {path: 'countdown-app', component: CountdownComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterFinalComponent},
   {path: 'login', component: LoginComponent},
   {path: 'timelines', component: TimelinesComponent},
+  {path: 'mymusic', component: MymusicComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 

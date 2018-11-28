@@ -14,6 +14,8 @@ import { TodoComponent } from './todo/todo.component';
 
 import { RegisterFinalComponent } from './register-final/register-final.component';
 import { LoginComponent } from './login/login.component';
+import { TimelinesComponent } from './timelines/timelines.component';
+import { MymusicComponent } from './mymusic/mymusic.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { LoginComponent } from './login/login.component';
     NamecardComponent,
     TodoComponent,
     RegisterFinalComponent,
-    LoginComponent
+    LoginComponent,
+    TimelinesComponent,
+    MymusicComponent
   ],
   imports: [
     BrowserModule,

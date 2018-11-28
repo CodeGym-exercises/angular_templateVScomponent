@@ -6,6 +6,7 @@ import {RatingbarComponent} from './ratingbar/ratingbar.component';
 import { TodoComponent } from './todo/todo.component';
 import { RegisterFinalComponent } from './register-final/register-final.component';
 import { LoginComponent } from './login/login.component';
+import { TimelinesComponent } from './timelines/timelines.component';
 
 const routes: Routes = [
   {path: 'countdown-app', component: CountdownComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'todo', component: TodoComponent},
   {path: 'register', component: RegisterFinalComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'timelines', component: TimelinesComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 

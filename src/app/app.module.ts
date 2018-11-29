@@ -16,6 +16,7 @@ import { RegisterFinalComponent } from './register-final/register-final.componen
 import { LoginComponent } from './login/login.component';
 import { TimelinesComponent } from './timelines/timelines.component';
 import { MymusicComponent } from './mymusic/mymusic.component';
+import { DictionaryComponent } from './dictionary/dictionary.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { MymusicComponent } from './mymusic/mymusic.component';
     LoginComponent,
     TimelinesComponent,
     MymusicComponent,
+    DictionaryComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { RegisterFinalComponent } from './register-final/register-final.componen
 import { LoginComponent } from './login/login.component';
 import { TimelinesComponent } from './timelines/timelines.component';
 import { MymusicComponent } from './mymusic/mymusic.component';
+import { DictionaryComponent } from './dictionary/dictionary.component';
 
 const routes: Routes = [
   {path: 'countdown-app', component: CountdownComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'timelines', component: TimelinesComponent},
   {path: 'mymusic', component: MymusicComponent},
+  {path: 'dictionary', component: DictionaryComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
